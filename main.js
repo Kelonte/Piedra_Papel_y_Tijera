@@ -1,12 +1,40 @@
+let playing = true
+let click = new Audio("http://sonidosmp3gratis.com/sounds/Computer_Mouse_Click_01_Sound_Effect_Mp3_339.mp3");
+let wee = new Audio("http://sonidosmp3gratis.com/sounds/mario-bros-woo-hoo.mp3");
+let fallo = new Audio("http://sonidosmp3gratis.com/sounds/error-fallo-1.mp3");
+let boing = new Audio("http://sonidosmp3gratis.com/sounds/cartoon069.mp3");
+
 const botonImg = document.querySelectorAll(".btnImg");
 botonImg.forEach(element=>{
 element.addEventListener("click", ejecutar);
 });
 
+function ganaste(){
+    playing = false;
+    wee.pause();
+    wee.currentTime = 0; 
+    wee.play();
+}
+
+function perdiste(){
+    playing = false;
+    fallo.pause();
+    fallo.currentTime = 0; 
+    fallo.play();
+}
+
+function empate(){
+    playing = false;
+    boing.pause();
+    boing.currentTime = 0; 
+    boing.play();
+}
+
 function ejecutar(){
+    click.play();
     document.getElementById("texto").innerHTML="¡Piedra, papel o tijera!";
-    document.getElementById("imagenPl").src = "";
-    document.getElementById("imagenPc").src = "";
+    document.getElementById("imagenPl").src = "img/PPT.png";
+    document.getElementById("imagenPc").src = "img/PPT.png";
     let inputPPT=this.id;
     setTimeout(alPPT, 1100, inputPPT);
 }
@@ -42,27 +70,34 @@ function alPPT(inputPPT){
     }
     let resultado="";
     if(player1 == player2){
-        resultado="EMPATADOS";        
+        resultado="EMPATADOS";
+        empate();     
     }else{
         if(player1 == 1){
             if(player2 == 2){
                 resultado = "GANASTE";
+                ganaste();
             }else{
                 resultado = "PERDISTE";
+                perdiste();
             }
         }
         if(player1==2){
             if(player2==1){
                 resultado = "PERDISTE";
+                perdiste();
             }else{
                 resultado = "GANASTE";
+                ganaste();
             }
         }
         if(player1==3){
             if(player2 == 1){
                 resultado = "GANASTE";
+                ganaste();
             }else{
                 resultado = "PERDISTE";
+                perdiste();
             }
         }
     }

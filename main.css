@@ -52,6 +52,7 @@ body{
     height: 250px;
     margin: 10px;
     border: 10px white solid;
+    transform: scaleX(-1);
 }
 
 #imagenPl{
