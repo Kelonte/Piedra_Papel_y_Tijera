@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* transition:all 300ms ease-in-out; */
+}
+
+body{
+    background: linear-gradient(90deg,#c7660c,#f5d418);
+    width: 100vw;
+}
+
+#portada{
+    background-color: #00000015;
+    color: #58352f;
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#cuerpo{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #00000000;
+    align-content: center;
+    justify-content: center;
+    color: white;
+}
+
+#texto{
+    font-size: 25px;
+}
+
+#player1, #playerPc{
+    text-align: center;
+    color: #38221e;
+}
+
+#imagen1, #imagen2, #imagen3{
+    background-color: #7c1e60;
+    width: 85px;
+    height: 85px;
+    margin: 5px;
+    border: 5px white solid;
+}
+
+#imagenPc{
+    background-color: #1e7c4d;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border: 10px white solid;
+}
+
+#imagenPl{
+    background-color: #7c1e60;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border: 10px white solid;
+}
